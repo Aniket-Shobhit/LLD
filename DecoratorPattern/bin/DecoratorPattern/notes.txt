@@ -1,0 +1,4 @@
+In decorator pattern, getting a new class does not result in making numerous permutations of classes to get a specific work done
+Like in this pizza code, if we get a new ingredient or topping that we wanted to add, we dont have to make different classes like extra cheese + margherita + newIngredient.
+we can just follow the decorator pattern and only make one class for the new ingredient and add it to the pizza object.
+like -> new FarmhousePizza(new MargheritaPizza(new NewIngredient()));
