@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         
         EntryGate bike1 = new EntryGate(1234L, VehicleTypeEnum.TWO_WHEELER,47L);
-        EntryGate bike2 =  new EntryGate(4827L,VehicleTypeEnum.TWO_WHEELER,59L);
+        EntryGate bike2 = new EntryGate(4827L,VehicleTypeEnum.TWO_WHEELER,59L);
         EntryGate bike3 = new EntryGate(5134L,VehicleTypeEnum.TWO_WHEELER,18L);
         EntryGate bike4 = new EntryGate(2754L,VehicleTypeEnum.TWO_WHEELER,68L);
 

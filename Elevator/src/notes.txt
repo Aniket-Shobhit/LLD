@@ -1,0 +1,8 @@
+Objects -> 
+Elevator
+Building(has n number of elevators)
+ExternalElevator Buttons(have up and down button)
+Internal Elevator Button(Have different floor buttons)
+Door
+Floor
+Display(Shows the current floor, direction, and status of the elevator)
