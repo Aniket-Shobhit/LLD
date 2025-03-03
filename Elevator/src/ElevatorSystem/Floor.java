@@ -7,9 +7,8 @@ public class Floor {
     int floor;
     ExternalButton externalButton;
 
-    public Floor(int floor) {
+    public Floor(int floor, ExternalButtonDispatcher dispatcher) {
         this.floor = floor;
-        ExternalButtonDispatcher dispatcher = new ExternalButtonDispatcher();
         this.externalButton = new ExternalButton(floor, dispatcher);
     }
 

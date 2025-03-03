@@ -41,6 +41,7 @@ public class ElevatorController {
                 downQueue.add(floor);
             }
         }
+        System.out.println("Request submitted for elevator " + elevatorId + " to go to floor " + floor + " in direction " + direction);
     }
 
     public void moveElevator() {
@@ -55,6 +56,7 @@ public class ElevatorController {
                     upQueue.add(currentQueue.poll());
                 }
                 moveElevator();
+                return;
             }
             else {
                 targetFloor = upQueue.poll();
@@ -67,12 +69,14 @@ public class ElevatorController {
                     downQueue.add(currentQueue.poll());
                 }
                 moveElevator();
+                return;
             }
             else {
                 targetFloor = downQueue.poll();
             }
         }
         elevator.setCurrentFloor(targetFloor);
+        System.out.println("Elevator " + elevatorId + " is moving to floor " + targetFloor);
     }
 
     public Boolean isRequestPending() {

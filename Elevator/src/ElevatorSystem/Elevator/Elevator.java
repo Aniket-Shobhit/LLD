@@ -17,7 +17,7 @@ public class Elevator {
     DirectionEnum direction;
     InternalButton buttons;
 
-    public Elevator(int id) {
+    public Elevator(int id, InternalButtonDispatcher dispatcher) {
         this.id = id;
         this.display = new Display();
         this.currentFloor = 0;
@@ -27,7 +27,6 @@ public class Elevator {
             Button btn = new Button(i+1);
             buttons.add(btn);
         }
-        InternalButtonDispatcher dispatcher = new InternalButtonDispatcher();
         this.buttons = new InternalButton(buttons, dispatcher, id);
         this.direction = DirectionEnum.STATIONARY;
     }

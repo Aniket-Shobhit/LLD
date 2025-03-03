@@ -8,7 +8,19 @@ import ElevatorSystem.Elevator.Elevator;
 public class ExternalButtonDispatcher {
     List<ElevatorController> elevatorControllers; 
 
-    public void dispatchUpButton(int floor) {
+    public ExternalButtonDispatcher() {
+
+    }
+
+    public ExternalButtonDispatcher(List<ElevatorController> elevatorControllers) {
+        this.elevatorControllers = elevatorControllers;
+    }
+
+    public void setElevatorControllers(List<ElevatorController> elevatorControllers) {
+        this.elevatorControllers = elevatorControllers;
+    }
+
+    public ElevatorController dispatchUpButton(int floor) {
         // Find the nearest elevator and send it to the floor
         // call the elevatorController acceptNewReq based on the nearest elevator found through the above step
         int distance = Integer.MAX_VALUE;
@@ -38,11 +50,13 @@ public class ExternalButtonDispatcher {
         for(ElevatorController elevatorController : elevatorControllers) {
             if(elevatorController.getElevatorId() == targetElevatorId) {
                 elevatorController.submitNewRequest(floor, DirectionEnum.UP);
+                return elevatorController;
             }
         }
+        return null;
     }
 
-    public void dispatchDownButton(int floor) {
+    public ElevatorController dispatchDownButton(int floor) {
         // Find the nearest elevator and send it to the floor
         // call the elevatorController acceptNewReq based on the nearest elevator found through the above step
         int distance = Integer.MAX_VALUE;
@@ -69,10 +83,13 @@ public class ExternalButtonDispatcher {
                 distance = elevatorDistance;
             }
         }
+        System.out.println("Distance is " + distance);
         for(ElevatorController elevatorController : elevatorControllers) {
             if(elevatorController.getElevatorId() == targetElevatorId) {
                 elevatorController.submitNewRequest(floor, DirectionEnum.DOWN);
+                return elevatorController;
             }
         }
+        return null;
     }
 }

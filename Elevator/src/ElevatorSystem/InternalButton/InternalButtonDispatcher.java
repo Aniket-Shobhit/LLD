@@ -6,8 +6,21 @@ import ElevatorSystem.Display.DirectionEnum;
 
 public class InternalButtonDispatcher {
     List<ElevatorController> elevatorControllers;
+    
 
-    public void dispatchButton(int floor, int elevatorId) {
+    public InternalButtonDispatcher() {
+
+    }
+
+    public InternalButtonDispatcher(List<ElevatorController> elevatorControllers) {
+        this.elevatorControllers = elevatorControllers;
+    }
+
+    public void setElevatorControllers(List<ElevatorController> elevatorControllers) {
+        this.elevatorControllers = elevatorControllers;
+    }
+
+    public ElevatorController dispatchButton(int floor, int elevatorId) {
         for(ElevatorController controller : elevatorControllers) {
             if(controller.getElevator().getId() == elevatorId) {
                 if(controller.getElevator().getCurrentFloor() < floor) {
@@ -15,8 +28,10 @@ public class InternalButtonDispatcher {
                 } else {
                     controller.submitNewRequest(floor, DirectionEnum.DOWN);
                 }
+                return controller;
             }
         }
+        return null;
     }
 }
 
