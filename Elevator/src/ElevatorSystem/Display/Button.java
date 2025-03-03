@@ -12,7 +12,7 @@ public class Button {
         return floor;
     }
 
-    public Boolean getIsClicked() {
+    public Boolean isClicked() {
         return isClicked;
     }
 

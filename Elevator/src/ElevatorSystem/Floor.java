@@ -1,10 +1,17 @@
 package ElevatorSystem;
 
 import ElevatorSystem.ExternalButton.ExternalButton;
+import ElevatorSystem.ExternalButton.ExternalButtonDispatcher;
 
 public class Floor {
     int floor;
     ExternalButton externalButton;
+
+    public Floor(int floor) {
+        this.floor = floor;
+        ExternalButtonDispatcher dispatcher = new ExternalButtonDispatcher();
+        this.externalButton = new ExternalButton(floor, dispatcher);
+    }
 
     public Floor(int floor, ExternalButton externalButton) {
         this.floor = floor;
@@ -23,7 +30,4 @@ public class Floor {
         this.floor = floor;
     }
 
-    public void setExternalButton(ExternalButton externalButton) {
-        this.externalButton = externalButton;
-    }
 }

@@ -2,5 +2,6 @@ package ElevatorSystem.Display;
 
 public enum DirectionEnum {
     UP,
-    DOWN
+    DOWN,
+    STATIONARY
 }
