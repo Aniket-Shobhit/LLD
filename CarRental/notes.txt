@@ -1,0 +1,6 @@
+Users and vehicles will be there. 
+Stores will be there at different locations. 
+Each store will have set of available vehicles for the user to choose from. 
+User can rent a vehicle from a store making a reservation.
+Bill will be made based on the type of reservation. 
+Then user can return the vehicle to any location.
