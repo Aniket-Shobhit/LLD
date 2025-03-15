@@ -42,6 +42,7 @@ public class Bill {
     }
 
     public void printBill() {
+        System.out.println("Bill Details ->");
         System.out.println("Bill for reservation id: " + reservation.getReservationId());
         System.out.println("User: " + user.getName());
         System.out.println("Vehicle: " + reservation.getVehicle().getVehicleName() + " " + reservation.getVehicle().getCompanyName());
@@ -49,4 +50,9 @@ public class Bill {
         System.out.println("Return date: " + reservation.getRentDateTo());
         System.out.println("Amount due: " + billAmount);
     }
+
+    public void pay() {
+        System.out.println("Payment of " + billAmount + " successful for reservation id: " + reservation.getReservationId());
+    }
 }
+

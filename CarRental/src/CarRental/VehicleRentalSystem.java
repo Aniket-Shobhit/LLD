@@ -46,6 +46,7 @@ public class VehicleRentalSystem {
     }
 
     public Reservation createReservation(User user, Store store, Vehicle vehicle, int daysRented) {
+        System.out.println("Reservation Details ->");
         Reservation reservation = new Reservation(user, vehicle, store, daysRented);
         store.addReservation(reservation);
         System.out.println("Reservation Id: " + reservation.getReservationId());

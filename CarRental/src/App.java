@@ -52,9 +52,12 @@ public class App {
         vehicleRentalSystem.addStore(store2);
 
         Reservation reservation = vehicleRentalSystem.createReservation(user1, store1, vehicle2, 2);
-
         Bill bill = vehicleRentalSystem.completeReservation(reservation);
-        
+        bill.pay();
+
+        Reservation reservation2 = vehicleRentalSystem.createReservation(user2, store2, vehicle6, 3);
+        Bill bill2 = vehicleRentalSystem.completeReservation(reservation2);
+        bill2.pay();
     }
     
 }
