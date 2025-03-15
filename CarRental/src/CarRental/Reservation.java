@@ -8,18 +8,21 @@ public class Reservation {
     int reservationId;
     User user;
     Vehicle vehicle;
-    Date rentDateFrom;
-    Date rentDateTo;
+    Store store;
+    Date rentDateFrom = new Date();
+    Date rentDateTo = new Date();
     Location pickupLocation;
     Location dropLocation;
     ReservationStatusEnum reservationStatus;
 
-    public Reservation(User user, Vehicle vehicle, int daysRented) {
+    public Reservation(User user, Vehicle vehicle, Store store, int daysRented) {
         this.reservationId = generateId();
         this.user = user;
         this.vehicle = vehicle;
         this.rentDateFrom = new Date();
         this.rentDateTo.setDate(this.rentDateFrom.getDate() + daysRented);
+        this.pickupLocation = store.getLocation();
+        this.store = store;
     }
 
     private synchronized int generateId() {
@@ -28,6 +31,10 @@ public class Reservation {
 
     public int getReservationId() {
         return reservationId;
+    }
+
+    public Store getStore() {
+        return store;
     }
 
     public User getUser() {
@@ -76,18 +83,6 @@ public class Reservation {
 
     public void setReservationStatus(ReservationStatusEnum reservationStatus) {
         this.reservationStatus = reservationStatus;
-    }
-
-    public void cancel() {
-        this.reservationStatus = ReservationStatusEnum.CLOSED;
-    }
-
-    public void confirm() {
-        this.reservationStatus = ReservationStatusEnum.OPEN;
-    }
-
-    public void extend(Date newReturnDate) {
-        this.rentDateTo = newReturnDate;
     }
 
     public void addVehicle(Vehicle vehicle) {

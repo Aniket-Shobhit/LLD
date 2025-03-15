@@ -1,6 +1,6 @@
 package CarRental;
 
-import java.util.List;
+import java.util.*;
 
 public class Store {
     
@@ -14,6 +14,7 @@ public class Store {
         this.id = id;
         this.name = name;
         this.location = location;
+        reservations = new ArrayList<Reservation>();
     }
 
     public void  addReservation(Reservation reservation) {

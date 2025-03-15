@@ -4,6 +4,8 @@ import CarRental.User;
 import CarRental.Store;
 import CarRental.Location;
 import CarRental.VehicleInventoryManager;
+import CarRental.Reservation;
+import CarRental.Bill;
 
 public class App {
 
@@ -49,8 +51,10 @@ public class App {
         vehicleRentalSystem.addStore(store1);
         vehicleRentalSystem.addStore(store2);
 
-        // Reservation reservation = vehicleRentalSystem.createReservation(user1, store1, vehicle2, 2);
-        // System.out.println("Reservation Id: " + reservation.getReservationId());
+        Reservation reservation = vehicleRentalSystem.createReservation(user1, store1, vehicle2, 2);
+
+        Bill bill = vehicleRentalSystem.completeReservation(reservation);
+        
     }
     
 }

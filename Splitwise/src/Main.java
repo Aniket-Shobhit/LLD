@@ -42,7 +42,7 @@ public class Main {
         moneyOwed.add(550);
         moneyOwed.add(200);
 
-        Expense shoppingExpense = trip.createExpense(2, "Online Shopping", aniket, 750, userList, ExpenseTypeEnum.EXACT, moneyOwed);
+        // Expense shoppingExpense = trip.createExpense(2, "Online Shopping", aniket, 750, userList, ExpenseTypeEnum.EXACT, moneyOwed);
 //        shoppingExpense.showExpense();
 
         userList = new ArrayList<>();
@@ -53,13 +53,13 @@ public class Main {
         moneyOwed.add(70);
         moneyOwed.add(30);
 
-        Expense foodExpense = trip.createExpense(3, "Food", shubham, 800, userList, ExpenseTypeEnum.PERCENT, moneyOwed);
+        // Expense foodExpense = trip.createExpense(3, "Food", shubham, 800, userList, ExpenseTypeEnum.PERCENT, moneyOwed);
 //
         userList = new ArrayList<>();
         userList.add(shivam);
         userList.add(shubham);
 
-        Expense cabExpense = trip.createExpense(4, "Cab", aniket, 500, userList, ExpenseTypeEnum.EQUAL, new ArrayList<>());
+        // Expense cabExpense = trip.createExpense(4, "Cab", aniket, 500, userList, ExpenseTypeEnum.EQUAL, new ArrayList<>());
 
         groupController.settleExpense(1);
     }
