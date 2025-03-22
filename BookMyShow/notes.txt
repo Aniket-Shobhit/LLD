@@ -1,0 +1,18 @@
+Requirements ->
+multiple theatre at multiple locations
+theatre have multiple multiple rooms
+room has types -> 3d, imax, normal
+each room will have movie at different time ( room will have list of movies)
+room have multiple seats
+user can book seats
+seats of three types -> gold, silver, platinum having varied prices
+user can search through theatre then see the shows it has, or search shows and see theatre its running on
+bill based on type of screen, type of seat, number of seats, time of show
+
+classes ->
+user
+show
+room
+seat
+theatre
+bill/payment
